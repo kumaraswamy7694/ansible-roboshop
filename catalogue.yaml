@@ -54,7 +54,7 @@
         src: mongodb.repo
         dest: /etc/yum.repos.d/mongo.repo
     - name: Install MongoDB
-      ansible.builtin.command:
+      ansible.builtin.yum:
         name: mongodb-org-shell 
         state: installed
     - name: laod catalogue data 
