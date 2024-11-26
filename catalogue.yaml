@@ -1,0 +1,6 @@
+- name: insall catalogue component
+  hosts: catalogue
+  become: yes 
+  tasks: 
+  - name:  setup npm soruce 
+    ansible.builtin.script:  curl -sL https://rpm.nodesource.com/setup_lts.x | bash
