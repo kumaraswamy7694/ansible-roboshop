@@ -4,3 +4,5 @@ mongodb.kumaraswamy.xyz
 catalogue.kumaraswamy.xyz
 [web]
 web.kumaraswamy.xyz
+[redis]
+redis.kumaraswamy.xyz
