@@ -7,11 +7,18 @@
         name: nginx
         state: installed
 
+    - name: test nginx configuration
+      command: nginx -t
+      register: nginx_config_test
+      failed_when: nginx_config_test.rc != 0
+      changed_when: false  # This task should not report a change
+
     - name: start and enable nginx
       ansible.builtin.systemd:
         name: nginx
         state: started
-        enabled: yes  # Correct usage of 'enabled' instead of 'enable'
+        enabled: yes
+      when: nginx_config_test.rc == 0  # Only start nginx if config is valid
 
     - name: remove html directory
       ansible.builtin.file:
@@ -43,4 +50,5 @@
       ansible.builtin.systemd:
         name: nginx
         state: restarted
-        enabled: yes  # Ensures the service will start on boot
+        enabled: yes
+      when: nginx_config_test.rc == 0  # Only restart nginx if config is valid
