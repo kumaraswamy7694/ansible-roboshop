@@ -1,18 +1,21 @@
-- name: install redis component
+- name: Install Redis component
   hosts: redis
-  become: yes 
+  become: yes
   tasks:
-  - name: install redis repo 
-    ansible.builtin.yum:
-      name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
-      state: installed 
-      disable_gpg_check: true
-  - name: enable redis 6.2
-    ansible.builtin.command: yum module enable redis:remi-6.2 -y 
-  - name: install redis
-    ansible.builtin.yum:
-      name: redis
-      state: installed
+    - name: Install Remi repo
+      ansible.builtin.yum:
+        name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+        state: installed
+        disable_gpg_check: true
+
+    - name: Enable Redis 6.2 module
+      ansible.builtin.command:
+        cmd: yum module enable redis:remi-6.2 -y
+
+    - name: Install Redis
+      ansible.builtin.yum:
+        name: redis
+        state: installed
   # - name: allow remote connection to redis
   #   ansible.builtin.replace:
   #     path: /etc/redis.conf
