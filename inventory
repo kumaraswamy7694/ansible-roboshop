@@ -8,3 +8,5 @@ web.kumaraswamy.shop
 redis.kumaraswamy.shop
 [user]
 user.kumaraswamy.shop
+[cart]
+cart.kumaraswamy.shop
