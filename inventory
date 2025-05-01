@@ -4,3 +4,5 @@ mongodb.kumaraswamy.shop
 catalogue.kumaraswamy.shop
 [web]
 web.kumaraswamy.shop
+[redis]
+redis.kumaraswamy.shop
