@@ -6,3 +6,5 @@ catalogue.kumaraswamy.shop
 web.kumaraswamy.shop
 [redis]
 redis.kumaraswamy.shop
+[user]
+user.kumaraswamy.shop
