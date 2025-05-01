@@ -10,3 +10,9 @@ redis.kumaraswamy.shop
 user.kumaraswamy.shop
 [cart]
 cart.kumaraswamy.shop
+[mysql]
+mysql.kumaraswamy.shop
+[shipping]
+shipping.kumaraswamy.shop
+    
+
